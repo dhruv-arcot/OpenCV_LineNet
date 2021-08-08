@@ -5,6 +5,11 @@ import cv2
 import imutils
 import matplotlib.pyplot as plt
 import argparse  
+import time
+from collections import deque
+pts = deque(maxlen=36)
+
+
 
 
 def pre_process(frame):
@@ -105,9 +110,9 @@ def find_Contour(file_path=None):
     cv2.destroyAllWindows()  
 
 if __name__ == '__main__':
-    #parser = argparse.ArgumentParser()    
-    #parser.add_argument("--Video", help = "Enter Path to Video",type=str)
-    #args = parser.parse_args()  
+    parser = argparse.ArgumentParser()    
+    parser.add_argument("--Video", help = "Enter Path to Video",type=str)
+    args = parser.parse_args()  
     print("Entered Main")
     find_Contour()
     
